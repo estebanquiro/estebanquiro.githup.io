@@ -1,0 +1,390 @@
+/* Importar la fuente Poppins desde Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+/* Estilo general para todos los elementos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos para el cuerpo de la página */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #1a1a1a;
+    color: #f0f0f0;
+    line-height: 1.6;
+    transition: background-color 0.5s ease;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Estilo de las animaciones de gradiente en los bordes del cuerpo */
+body::before, body::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    width: 5px;
+    height: 100%;
+    background: linear-gradient(0deg, rgba(204, 255, 18, 0.5), rgba(218, 224, 220, 0) 100%);
+    animation: glow 1.5s infinite alternate;
+}
+
+body::before {
+    left: 0;
+}
+
+body::after {
+    right: 0;
+}
+
+/* Animación para el brillo de los bordes */
+@keyframes glow {
+    from {
+        opacity: 0.5;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Estilo del contenedor del encabezado */
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Estilo del logo */
+.logo {
+    width: 80px;
+    margin-left: 0;
+}
+
+/* Estilo del menú de navegación */
+.navbar ul {
+    display: flex;
+    list-style: none;
+}
+
+.navbar li {
+    margin: 0 15px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #f0f0f0;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+    color: #ffa500;
+}
+
+/* Estilo del slider principal */
+.hero-slider {
+    position: relative;
+}
+
+.hero-slider img {
+    width: 100%;
+    height: auto;
+    filter: brightness(0.7);
+}
+
+/* Estilo del contenido del slide */
+.slide-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff;
+    z-index: 10;
+}
+
+.slide-content h1 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.slide-content p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+/* Estilos para los botones principales */
+.btn-primary {
+    background-color: #ffa500;
+    color: #1a1a1a;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #ff8c00;
+}
+
+/* Estilos para las secciones de eventos */
+.events {
+    padding: 50px 20px;
+}
+
+.events h2 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.event-card {
+    background-color: #292929;
+    padding: 20px;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.event-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.event-card h3 {
+    font-size: 1.5rem;
+    margin: 15px 0;
+}
+
+.event-card p {
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
+/* Estilos para los botones secundarios */
+.btn-secondary {
+    background-color: #ffa500;
+    color: #1a1a1a;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background-color: #ff8c00;
+}
+
+.event-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Estilos para la sección de información sobre */
+.about {
+    padding: 50px 20px;
+    background-color: #292929;
+    color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-content {
+    display: flex;
+    align-items: center;
+    max-width: 1200px;
+    margin: auto;
+    flex-wrap: wrap;
+}
+
+.about-text {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.about-image {
+    flex: 1;
+}
+
+.about-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+#about-paragraph {
+    max-height: 100px; 
+    overflow: hidden; 
+    text-overflow: ellipsis; 
+    transition: max-height 0.5s ease; 
+}
+
+.about-content.expanded #about-paragraph {
+    max-height: none; 
+}
+
+#about-btn {
+    display: block;
+    margin-top: 20px;
+    background-color: #ffa500;
+    color: #1a1a1a;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#about-btn:hover {
+    background-color: #ff8c00;
+}
+
+/* Estilos para la sección de contacto */
+.contact {
+    padding: 50px 20px;
+}
+
+.contact h2 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.contact-info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 30px;
+}
+
+.contact-item {
+    flex: 1 1 300px;
+    margin: 15px;
+}
+
+.contact-item h4 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.socials img {
+    width: 40px;
+    height: auto;
+    margin: 0 10px;
+    transition: transform 0.3s ease;
+}
+
+.socials img:hover {
+    transform: scale(1.1);
+}
+
+.map iframe {
+    width: 100%;
+    height: 500px;
+    border: none;
+}
+
+/* Estilos para el pie de página */
+footer {
+    background-color: #292929;
+    color: #f0f0f0;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-logo img {
+    width: 80px;
+    margin-bottom: 20px;
+}
+
+.footer-links,
+.footer-socials {
+    margin-bottom: 20px;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin: 10px 0;
+}
+
+.footer-links a {
+    color: #f0f0f0;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #ffa500;
+}
+
+.footer-socials img {
+    width: 40px;
+    height: auto;
+    margin: 0 10px;
+}
+
+/* Estilos para el modo claro */
+body.lightened {
+    background-color: #f0f0f0;
+    color: #e6ff04;
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+body.lightened .navbar a {
+    color: #01075a;
+}
+
+body.lightened .navbar a:hover {
+    color: #96e700;
+}
+
+body.lightened .slide-content {
+    color: #f30909;
+}
+
+/* Estilos para la reserva */
+.reserve {
+    position: relative;
+}
+
+.reserve-button-container {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+}
+
+/* Estilos para el botón de reserva */
+.btn-reserve {
+    display: inline-block;
+    padding: 15px 30px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    background-color: #ffc107;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+}
+
+.btn-reserve:hover {
+    background-color: #ffca28;
+    transform: scale(1.05);
+}
+
+.btn-reserve:active {
+    transform: scale(0.95);
+}
